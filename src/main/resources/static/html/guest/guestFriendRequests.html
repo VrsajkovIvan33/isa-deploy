@@ -1,0 +1,77 @@
+<div ng-cloak ng-controller="GuestFriendRequestsController">
+    <header class="main_header" style="top : 70px">
+        <div class="container">
+            <nav class="navbar navbar_default" role="navigation">
+                <div class="menuBar">
+                    <li><a href="#/guest" ng-click="disconnect()">Home</a></li>
+                    <li><a href="#/guest/profile" ng-click="disconnect()">Profile</a></li>
+                    <li><a href="#/guest/friends" ng-click="disconnect()">Friends</a></li>
+                    <li class="active"><a href="#/guest/friendRequests">Friend Requests<span class="badge" ng-if="showRequests" style="background-color: red">{{friendRequestsNumber}}</span></a></li>
+                    <li><a href="#/guest/restaurants" ng-click="disconnect()">Restaurants</a></li>
+                    <li><a href="#/guest/reservations" ng-click="disconnect()">Reservations</a></li>
+                    <li><a href="#/" ng-click="logOut()">Log out</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="carousel-caption">
+
+            <div class="span3 well">
+
+                <div class="jumbotron list-content">
+                    <ul class="list-group">
+                        <li href="#" class="list-group-item title">
+                            FRIEND REQUESTS
+                        </li>
+                        <li href="#" class="list-group-item text-left" ng-repeat="friend in friendRequests">
+                            <img class="img-thumbnail" src="http://worldartsme.com/images/troll-face-clipart-1.jpg">
+                            <label class="name">
+                                {{friend.name}} {{friend.surname}}<br>
+                            </label>
+                            <label class="pull-right">
+                                <a  class="btn btn-success btn-xs glyphicon glyphicon-ok" title="Accept" ng-click="accept(friend.id)"></a>
+                                <a  class="btn btn-danger  btn-xs glyphicon glyphicon-trash" title="Ignore" ng-click="ignore(friend.id)"></a>
+                            </label>
+                            <div class="break"></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .list-content{
+        min-height:300px;
+    }
+    .list-content .list-group .title{
+        background:#5bc0de;
+        border:2px solid #DDDDDD;
+        font-weight:bold;
+        color:#FFFFFF;
+    }
+    .list-group-item img {
+        height:80px;
+        width:80px;
+    }
+
+    .jumbotron .btn {
+        padding: 5px 5px !important;
+        font-size: 12px !important;
+    }
+    .prj-name {
+        color:#5bc0de;
+    }
+    .break{
+        width:100%;
+        margin:20px;
+    }
+    .name {
+        color:#5bc0de;
+    }
+</style>

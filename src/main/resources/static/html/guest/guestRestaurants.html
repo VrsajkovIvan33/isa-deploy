@@ -1,0 +1,122 @@
+<style>
+    .stylish-input-group .input-group-addon{
+        background: white !important;
+    }
+    .stylish-input-group .form-control{
+        border-right:0;
+        box-shadow:0 0 0;
+        border-color:#ccc;
+    }
+    .stylish-input-group button{
+        border:0;
+        background:transparent;
+    }
+    .responstable {
+        overflow-x: visible !important;
+        overflow-y: visible !important;
+    }
+</style>
+
+<div ng-cloak ng-controller="GuestRestaurantsController">
+    <header class="main_header" style="top : 70px">
+        <div class="container">
+            <nav class="navbar navbar_default" role="navigation">
+                <div class="menuBar">
+                    <li><a href="#/guest" ng-click="disconnect()">Home</a></li>
+                    <li><a href="#/guest/profile" ng-click="disconnect()">Profile</a></li>
+                    <li><a href="#/guest/friends" ng-click="disconnect()">Friends</a></li>
+                    <li><a href="#/guest/friendRequests" ng-click="disconnect()">Friend Requests<span class="badge" ng-if="showRequests" style="background-color: red">{{friendRequestsNumber}}</span></a></li>
+                    <li class="active"><a href="#/guest/restaurants">Restaurants</a></li>
+                    <li><a href="#/guest/reservations" ng-click="disconnect()">Reservations</a></li>
+                    <li><a href="#/" ng-click="logOut()">Log out</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="carousel-caption">
+            <h3>Restaurants</h3>
+
+            <table class="responstable">
+                <thead>
+                <tr>
+                    <th>Restaurant name:</th>
+                    <th>Restaurant type:</th>
+                    <th>Review:</th>
+                    <th>Review by friends:</th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <th>
+                        <div id="imaginary_container">
+                            <div class="input-group stylish-input-group">
+                                <input type="text" class="form-control"  placeholder="Search" ng-model="restaurantToSearch">
+                                <span class="input-group-addon">
+                                    <button type="submit" ng-click="searchByName(restaurantToSearch)">
+                                        <span class="glyphicon glyphicon-search"></span>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Type <span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <li role="presentation" ng-repeat="type in restaurantTypes"><a role="menuitem" ng-click="searchByType(type)">{{type}}</a></li>
+                            </ul>
+                        </div>
+                    </th>
+                    <th></th>
+                    <th></th>
+                    <th>
+                        <a class="btn btn-primary" ng-click="getRestaurants()">Reset</a>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <a class="btn btn-primary" ng-click="byName()">Sort by name</a>
+                    </th>
+                    <th>
+                        <a class="btn btn-primary" ng-click="byType()">Sort by type</a>
+                    </th>
+                    <th></th>
+                    <th></th>
+                    <th>
+                        <a class="btn btn-primary" ng-click="byDistance()">Sort by distance</a>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="r in restaurants" ng-if="sorted == 'not'">
+                    <td><a ng-click="openMapModal(r)">{{r.rName}}</a></td>
+                    <!--<td><input ng-model="r.rType" type="text" class="form-control form-control-lg" placeholder="Enter restaurant type"></td>-->
+                    <td>{{r.rType}}</td>
+                    <td>{{averageReviews[r.id]}}</td>
+                    <td>{{friendsReviews[r.id]}}</td>
+                    <td><a class="btn btn-primary" ng-click="bookNow(r)"><span class="glyphicon glyphicon-pencil"></span>  Book now</a></td>
+                </tr>
+                <tr ng-repeat="r in restaurants | orderBy:'rName'" ng-if="sorted == 'byName'">
+                    <td><a ng-click="openMapModal(r)">{{r.rName}}</a></td>
+                    <!--<td><input ng-model="r.rType" type="text" class="form-control form-control-lg" placeholder="Enter restaurant type"></td>-->
+                    <td>{{r.rType}}</td>
+                    <td>{{averageReviews[r.id]}}</td>
+                    <td>{{friendsReviews[r.id]}}</td>
+                    <td><a class="btn btn-primary" ng-click="bookNow(r)"><span class="glyphicon glyphicon-pencil"></span>  Book now</a></td>
+                </tr>
+                <tr ng-repeat="r in restaurants | orderBy:'rType'" ng-if="sorted == 'byType'">
+                    <td><a ng-click="openMapModal(r)">{{r.rName}}</a></td>
+                    <!--<td><input ng-model="r.rType" type="text" class="form-control form-control-lg" placeholder="Enter restaurant type"></td>-->
+                    <td>{{r.rType}}</td>
+                    <td>{{averageReviews[r.id]}}</td>
+                    <td>{{friendsReviews[r.id]}}</td>
+                    <td><a class="btn btn-primary" ng-click="bookNow(r)"><span class="glyphicon glyphicon-pencil"></span>  Book now</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+/**
+ * Created by Nole on 11/24/2016.
+ */
+
+angular.module('restaurantApp.services',[
+               'restaurantApp.LoginFactory',
+               'restaurantApp.GuestRegisterFactory',
+               'restaurantApp.GuestHomeFactory',
+               'restaurantApp.GuestRestaurantsFactory',
+               'restaurantApp.GuestReservationsFactory',
+               'restaurantApp.GuestFriendRequestsFactory',
+               'restaurantApp.GuestFriendsFactory',
+               'restaurantApp.ConfirmFactory',
+               'restaurantApp.GuestProfileFactory',
+               'restaurantApp.SystemmanagerService',
+               'restaurantApp.RestaurantmanagerService',
+               'restaurantApp.RestaurantService',
+               'restaurantApp.ConfirmFactory',
+               'restaurantApp.InviteFactory',
+               'restaurantApp.ProviderService',
+               'restaurantApp.RestaurantTableFactory',
+               'restaurantApp.RestaurantSegmentFactory',
+               'restaurantApp.TableRegionFactory',
+               'restaurantApp.RestaurantUsersFactory',
+               'restaurantApp.CalendarEventFactory',
+               'restaurantApp.WaiterService',
+               'restaurantApp.BartenderService',
+               'restaurantApp.CookService',
+               'restaurantApp.MenuService',
+               'restaurantApp.RestaurantReviewService',
+               'restaurantApp.WaiterReviewService',
+               'restaurantApp.MenuReviewService',
+               'restaurantApp.OrderFactory',
+               'restaurantApp.OrderItemFactory',
+               'restaurantApp.TenderService',
+               'restaurantApp.TenderItemService',
+               'restaurantApp.VisitHistoryFactory',
+               'restaurantApp.OfferService',
+               'restaurantApp.OfferItemService',
+               'restaurantApp.BillService'
+]);

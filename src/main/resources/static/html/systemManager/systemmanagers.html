@@ -1,0 +1,51 @@
+<div ng-cloak ng-controller="SystemmanagerController">
+    <header class="main_header" style="top : 70px">
+        <div class="container">
+            <nav class="navbar navbar_default" role="navigation">
+
+
+                <div class="menuBar">
+
+                    <li><a href="#/systemmanager">Home</a></li>
+                    <li><a href="#/systemmanager/systemmanagers">System Managers</a></li>
+                    <li><a href="#/systemmanager/restaurantmanagers">Restaurant Managers</a></li>
+                    <li><a href="#/systemmanager/restaurants">Restaurants</a></li>
+                    <li><a href="#/systemmanager/providers">Providers</a></li>
+                    <li><a ng-click="logOut()">Log out</a></li>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="carousel-caption">
+            <h3>System Managers</h3>
+
+            <!--<button ng-click="openAddModal()" type="button" class="btn btn-info btn-lg">Add System Manager</button>-->
+            <a ng-click="openAddModal()" class="btn btn-primary"><span class="glyphicon glyphicon-upload"></span> Add System Manager</a>
+
+            <table class="responstable">
+                <thead>
+                    <tr>
+                        <th>System Manager name:</th>
+                        <th>System Manager surname:</th>
+                        <th>System Manager email:</th>
+                        <th>Edit:</th>
+                        <th>Delete:</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="sm in systemManagers">
+                    <td>{{sm.name}}</td>
+                    <td>{{sm.surname}}</td>
+                    <td>{{sm.email}}</td>
+                    <!--<td><button ng-if="checkSystemManager(sm)" ng-click="openUpdateModal(sm)" type="button" class="btn btn-primary btn-md">Update</button></td>-->
+                    <!--<td><button ng-if="checkSystemManager(sm)" ng-click="removeSystemManager(sm)" type="button" class="btn btn-primary btn-md">Remove</button></td>-->
+                    <td><a ng-if="checkSystemManagerUpdate(sm)" ng-click="openUpdateModal(sm)" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span></a></td>
+                    <td><a ng-if="checkSystemManagerDelete(sm)" ng-click="removeSystemManager(sm)" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

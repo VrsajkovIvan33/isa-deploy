@@ -1,0 +1,52 @@
+<div ng-cloak ng-controller="RestaurantmanagerController">
+    <header class="main_header" style="top : 70px">
+        <div class="container">
+            <nav class="navbar navbar_default" role="navigation">
+
+
+                <div class="menuBar">
+
+                    <li><a href="#/systemmanager">Home</a></li>
+                    <li><a href="#/systemmanager/systemmanagers">System Managers</a></li>
+                    <li><a href="#/systemmanager/restaurantmanagers">Restaurant Managers</a></li>
+                    <li><a href="#/systemmanager/restaurants">Restaurants</a></li>
+                    <li><a href="#/systemmanager/providers">Providers</a></li>
+                    <li><a ng-click="logOut()">Log out</a></li>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="carousel-caption">
+            <h3>Restaurant Managers</h3>
+
+            <a ng-click="openAddModal()" class="btn btn-primary"><span class="glyphicon glyphicon-upload"></span> Add Restaurant Manager</a>
+
+            <table class="responstable">
+                <thead>
+                <tr>
+                    <th>Restaurant Manager name:</th>
+                    <th>Restaurant Manager surname:</th>
+                    <th>Restaurant Manager email:</th>
+                    <th>Restaurant Manager date of birth:</th>
+                    <th>Restaurant Manager restaurant:</th>
+                    <th>Edit:</th>
+                    <th>Delete:</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="rm in restaurantManagers">
+                    <td>{{rm.name}}</td>
+                    <td>{{rm.surname}}</td>
+                    <td>{{rm.email}}</td>
+                    <td>{{rm.date_of_birth | date}}</td>
+                    <td>{{rm.restaurant.rName}}</td>
+                    <td><a ng-click="openUpdateModal(rm)" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span></a></td>
+                    <td><a ng-click="removeRestaurantManager(rm)" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

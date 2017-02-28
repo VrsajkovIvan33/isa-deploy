@@ -1,0 +1,28 @@
+<div ng-cloak ng-controller="WaiterFunctionsController">
+    <header class="main_header" style="top : 70px">
+        <div class="container">
+            <nav class="navbar navbar_default" role="navigation">
+
+                <div class="menuBar">
+                    <ul>
+                        <li><a href="#waiter">Home</a></li>
+                        <li><a href="#waiter/profile">My profile</a></li>
+                        <li><a href="#waiter/calendar">Calendar</a></li>
+                        <li><a href="#waiter/tables">Table arrangement</a></li>
+                        <li><a href="#waiter/waitersOrders">My orders</a></li>
+                        <li><a href="#waiter/unassignedOrders">Unassigned orders</a></li>
+                        <li><a ng-click="logOut()">Log out</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="carousel-caption">
+            <div style="background-color:black">
+                <h1>Welcome, {{waiter.name}}!</h1>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+<div ng-cloak ng-controller="RestaurantController">
+    <header class="main_header" style="top : 70px">
+        <div class="container">
+            <nav class="navbar navbar_default" role="navigation">
+
+
+                <div class="menuBar">
+
+                    <li><a href="#/systemmanager">Home</a></li>
+                    <li><a href="#/systemmanager/systemmanagers">System Managers</a></li>
+                    <li><a href="#/systemmanager/restaurantmanagers">Restaurant Managers</a></li>
+                    <li><a href="#/systemmanager/restaurants">Restaurants</a></li>
+                    <li><a href="#/systemmanager/providers">Providers</a></li>
+                    <li><a ng-click="logOut()">Log out</a></li>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="carousel-caption">
+            <h3>Restaurants</h3>
+
+            <a ng-click="openAddModal()" class="btn btn-primary"><span class="glyphicon glyphicon-upload"></span> Add Restaurant</a>
+
+            <table class="responstable">
+                <thead>
+                    <tr>
+                        <th>Restaurant name:</th>
+                        <th>Restaurant type:</th>
+                        <th>Edit:</th>
+                        <!--<th>Delete:</th>-->
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="r in restaurants">
+                        <td>{{r.rName}}</td>
+                        <td>{{r.rType}}</td>
+                        <td><a ng-click="openUpdateModal(r)" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span></a></td>
+                        <!--<td><a ng-click="removeRestaurant(r)" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a></td>-->
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

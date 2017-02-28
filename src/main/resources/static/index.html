@@ -1,0 +1,248 @@
+<html ng-app="restaurantApp">
+<head>
+    <title>Restaurant scheduler</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src='/webjars/jquery/2.1.1/jquery.js'></script>
+    <script src='/webjars/jquery/2.1.1/jquery.min.js'></script>
+
+    <!-- Bootstrap -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/tables.css" rel="stylesheet">
+    <!--link href='http://fonts.googleapis.com/css?family=Belgrano' rel='stylesheet' type='text/css'-->
+    <!--link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'-->
+    <link rel='stylesheet' href='/webjars/bootstrap/css/bootstrap.css'>
+    <!--<script src='/webjars/bootstrap/js/bootstrap-table.js'></script>-->
+    <!--<link rel='stylesheet' href='/webjars/bootstrap/css/bootstrap-theme.css'>-->
+    <!--<link rel='stylesheet' href='/webjars/bootstrap/css/bootstrap-theme.min.css'>-->
+    <!--<link rel='stylesheet' href='/webjars/bootstrap/css/bootstrap.min.css'>-->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src='/webjars/jquery/2.1.1/jquery.js'></script>
+    <!--<script src='/webjars/jquery/2.1.1/jquery.min.js'></script>-->
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+
+
+    <script src='/webjars/bootstrap/js/bootstrap.js'></script>
+    <!--<script src='/webjars/bootstrap/js/tables.js'></script>-->
+    <!--<script src='/webjars/bootstrap/js/bootstrap.min.js'></script>-->
+
+
+    <script src='/webjars/angularjs/angular.js'></script>
+    <script src='/webjars/angularjs/angular-animate.js'></script>
+    <script src='/webjars/angularjs/angular-animate.min.js'></script>
+    <script src='/webjars/angularjs/angular-route.js'></script>
+
+    <script src='/webjars/angular-ui-bootstrap/ui-bootstrap.js'></script>
+    <script src='/webjars/angular-ui-bootstrap/ui-bootstrap-tpls.js'></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/directives.js"></script>
+    <!--ovo izbaciti kad instaliramo sa bowerom-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.10/ngStorage.js"></script>
+    <script src="js/routes.js"></script>
+
+    <!-- Controllers -->
+    <script src="js/controllers/loginController.js"></script>
+    <script src="js/controllers/guestRegisterController.js"></script>
+    <script src="js/controllers/systemmanagerController.js"></script>
+    <script src="js/controllers/restaurantmanagerController.js"></script>
+    <script src="js/controllers/restaurantController.js"></script>
+    <script src="js/controllers/waiterController.js"></script>
+    <script src="js/controllers/confirmRegisterController.js"></script>
+    <script src="js/controllers/restaurantManagerFunctionsController.js"></script>
+    <script src="js/controllers/providerController.js"></script>
+    <script src="js/controllers/guestProfileController.js"></script>
+    <script src="js/controllers/guestFriendsController.js"></script>
+    <script src="js/controllers/guestHomeController.js"></script>
+    <script src="js/controllers/guestRestaurantsController.js"></script>
+    <script src="js/controllers/guestReservationsController.js"></script>
+    <script src="js/controllers/guestFriendRequestsController.js"></script>
+    <script src="js/controllers/restaurantProvidersController.js"></script>
+    <script src="js/controllers/waiterController.js"></script>
+    <script src="js/controllers/cookController.js"></script>
+    <script src="js/controllers/bartenderController.js"></script>
+    <script src="js/controllers/waiterFunctionsController.js"></script>
+    <script src="js/controllers/cookFunctionsController.js"></script>
+    <script src="js/controllers/bartenderFunctionsController.js"></script>
+    <script src="js/controllers/menuController.js"></script>
+    <script src="js/controllers/beverageController.js"></script>
+    <script src="js/controllers/statementController.js"></script>
+    <script src="js/controllers/providerAccountController.js"></script>
+    <script src="js/controllers/tenderController.js"></script>
+    <script src="js/controllers/guestInviteController.js"></script>
+    <script src="js/controllers/providerTendersController.js"></script>
+    <script src="js/controllers/offerHistoryController.js"></script>
+    <script src="js/controllers/restaurantOffersController.js"></script>
+    <script src="js/controllers/reportController.js"></script>
+    <script src="js/controllers/chartController.js"></script>
+
+    <!-- Factories -->
+    <script src="js/services/guestRegisterFactory.js"></script>
+    <script src="js/services/loginService.js"></script>
+    <script src="js/services/systemmanagerService.js"></script>
+    <script src="js/services/restaurantmanagerService.js"></script>
+    <script src="js/services/restaurantService.js"></script>
+    <script src="js/services/confirmFactory.js"></script>
+    <script src="js/services/providerService.js"></script>
+    <script src="js/services/guestProfileFactory.js"></script>
+    <script src="js/services/guestFriendsFactory.js"></script>
+    <script src="js/services/guestHomeFactory.js"></script>
+    <script src="js/services/guestRestaurantsFactory.js"></script>
+    <script src="js/services/guestReservationsFactory.js"></script>
+    <script src="js/services/guestFriendRequestsFactory.js"></script>
+    <script src="js/services/restaurantTableFactory.js"></script>
+    <script src="js/services/restaurantSegmentFactory.js"></script>
+    <script src="js/services/tableRegionFactory.js"></script>
+    <script src="js/services/restaurantUsersFactory.js"></script>
+    <script src="js/services/calendarEventFactory.js"></script>
+    <script src="js/services/waiterService.js"></script>
+    <script src="js/services/cookService.js"></script>
+    <script src="js/services/bartenderService.js"></script>
+    <script src="js/services/menuService.js"></script>
+    <script src="js/services/restaurantReviewService.js"></script>
+    <script src="js/services/waiterReviewService.js"></script>
+    <script src="js/services/menuReviewService.js"></script>
+    <script src="js/services/orderFactory.js"></script>
+    <script src="js/services/orderItemFactory.js"></script>
+    <script src="js/services/tenderService.js"></script>
+    <script src="js/services/tenderItemService.js"></script>
+    <script src="js/services/visitHistoryService.js"></script>
+    <script src="js/services/inviteFactory.js"></script>
+    <script src="js/services/offerService.js"></script>
+    <script src="js/services/offerItemService.js"></script>
+    <script src="js/services/billService.js"></script>
+
+    <!-- Calendar -->
+    <link rel="stylesheet" href="bower_components/fullcalendar/dist/fullcalendar.css"/>
+    <!-- jquery, moment, and angular have to get included before fullcalendar -->
+    <script type="text/javascript" src="bower_components/moment/min/moment.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-ui-calendar/src/calendar.js"></script>
+    <script type="text/javascript" src="bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
+    <script type="text/javascript" src="bower_components/fullcalendar/dist/gcal.js"></script>
+
+    <!-- DragDrop -->
+    <script type="text/javascript" src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-dragdrop/src/angular-dragdrop.min.js"></script>
+
+    <!-- WebSockets -->
+    <script src="webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="webjars/stomp-websocket/stomp.min.js"></script>
+    <script src="bower_components/ng-stomp/dist/ng-stomp.standalone.min.js"></script>
+
+    <!-- Toastr -->
+    <!--script src="bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
+    <script src="bower_components/angular-toastr/dist/angular-toastr.min.css"></script>-->
+    <script src="https://unpkg.com/angular-toastr/dist/angular-toastr.tpls.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/angular-toastr/dist/angular-toastr.css"/>
+
+    <!--Fusioncharts-->
+    <script src="bower_components/fusioncharts/fusioncharts.js"></script>
+    <script src="bower_components/fusioncharts/fusioncharts.charts.js"></script>
+    <script src="angular-fusioncharts/angular-fusioncharts.min.js"></script>
+
+    <!--Google Maps -->
+    <script src="bower_components/ngmap/build/scripts/ng-map.min.js"></script>
+    <script src="bower_components/ngmap/testapp/event-arguments.html"></script>
+    <script src="http://maps.google.com/maps/api/js"></script>
+
+    <style>
+        div.flex_container {
+            display: flex;                  /* establish flex container */
+            flex-direction: row;            /* default value; can be omitted */
+            flex-wrap: nowrap;              /* default value; can be omitted */
+            justify-content: space-between; /* switched from default (flex-start, see below) */
+        }
+    </style>
+</head>
+
+<body>
+<div role="main">
+    <header class="main_header">
+        <div class="container">
+            <nav class="navbar navbar_default" role="navigation">
+                <div class="navbar-header">
+                    <h1 class="navbar-brand"><a href="/">Restaurant scheduler</a></h1>
+                    <a class="submenu">Menus</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Kao pre, scroll prikazuje footer -->
+    <!-- <section class="slider boxess"> -->
+    <section class="slider boxess">
+        <div id="myCarousel" class="carousel carousel-fade" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="item"><img alt="First slide" src="img/restaurant.jpg">
+                    <div ng-view></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<section class="main__middle__container homepage">
+
+</section>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <h3>About</h3>
+                <div class="seper"></div>
+                    <h5>Dbar je sajt</h5>
+
+            </div>
+            <div class="col-md-3">
+                <h3>Facebook</h3>
+                <div class="seper"> </div>
+                    <h5>Dbar je sajt</h5>
+
+            </div>
+            <div class="col-md-3">
+                <h3>Tweet</h3>
+                <div class="seper"> </div>
+                <h5>Dbar je sajt</h5>
+
+            </div>
+            <div class="col-md-3">
+                <h3>Contact</h3>
+                <div class="seper"></div>
+                    <h5>Dbar je sajt</h5>
+
+            </div>
+
+        </div>
+    </div>
+
+</footer>
+
+<script type="text/javascript">
+
+    $('.carousel').carousel({
+        interval: 3500, // in milliseconds
+        pause: 'none' // set to 'true' to pause slider on mouse hover
+    })
+</script>
+<script type="text/javascript">
+    $( "a.submenu" ).click(function() {
+        $( ".menuBar" ).slideToggle( "normal", function() {
+// Animation complete.
+        });
+    });
+    $( "ul li.dropdown a" ).click(function() {
+        $( "ul li.dropdown ul" ).slideToggle( "normal", function() {
+// Animation complete.
+        });
+        $('ul li.dropdown').toggleClass('current');
+    });
+</script>
+
+</div>
+
+</body>
+</html>

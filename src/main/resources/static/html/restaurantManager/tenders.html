@@ -1,0 +1,59 @@
+<div ng-cloak ng-controller="TenderController">
+    <header class="main_header" style="top : 70px">
+        <div class="container">
+            <nav class="navbar navbar_default" role="navigation">
+
+
+                <div class="menuBar">
+
+                    <li><a href="#restaurantManager">Home</a></li>
+                    <li><a href="#/restaurantManager/providers">Providers</a></li>
+                    <li><a href="#/restaurantManager/tenders">Tenders</a></li>
+                    <li><a href="#/restaurantManager/offers">Offers</a></li>
+                    <li><a href="#/restaurantManager/waiters">Waiters</a></li>
+                    <li><a href="#/restaurantManager/bartenders">Bartenders</a></li>
+                    <li><a href="#/restaurantManager/cooks">Cooks</a></li>
+                    <li><a href="#/restaurantManager/menu">Menu</a></li>
+                    <li><a href="#/restaurantManager/mapBeverage">Map Beverage</a></li>
+                    <li><a href="#restaurantManager/calendar">Calendar</a></li>
+                    <li><a href="#restaurantManager/tables">Table arrangement</a></li>
+                    <li><a href="#restaurantManager/statement">Reviews</a></li>
+                    <li><a href="#restaurantManager/reports">Report</a></li>
+                    <li><a href="#restaurantManager/chart">Chart</a></li>
+                    <li><a ng-click="logOut()">Log out</a></li>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="carousel-caption">
+            <h3>Tenders</h3>
+
+            <a ng-click="openAddModal()" class="btn btn-primary"><span class="glyphicon glyphicon-upload"></span> Add New Tender</a>
+
+            <table class="responstable">
+                <thead>
+                <tr>
+                    <th>Tender start:</th>
+                    <th>Tender end:</th>
+                    <th>Tender status:</th>
+                    <th>Tender items:</th>
+                    <th>Accepted offer:</th>
+                    <th>Cancel:</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="t in tenders">
+                    <td>{{t.tStart | date}}</td>
+                    <td>{{t.tEnd | date}}</td>
+                    <td>{{t.tStatus}}</td>
+                    <td><a ng-click="zoomTender(t)" class="btn btn-info"><span class="glyphicon glyphicon-zoom-in"></span></a></td>
+                    <td><a ng-if="t.tStatus == 'Closed'" ng-click="acceptedOffer(t)" class="btn btn-info"><span class="glyphicon glyphicon-list"></span></a></td>
+                    <td><a ng-if="t.tStatus == 'Active'" ng-click="removeTender(t)" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

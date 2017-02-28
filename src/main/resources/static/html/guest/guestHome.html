@@ -1,0 +1,40 @@
+<div ng-cloak ng-controller="GuestHomeController">
+    <header class="main_header" style="top : 70px">
+        <div class="container">
+            <nav class="navbar navbar_default" role="navigation">
+                <div class="menuBar">
+                    <li class="active"><a href="#/guest">Home</a></li>
+                    <li><a href="#/guest/profile" ng-click="disconnect()">Profile</a></li>
+                    <li><a href="#/guest/friends" ng-click="disconnect()">Friends</a></li>
+                    <li><a href="#/guest/friendRequests" ng-click="disconnect()">Friend Requests<span class="badge" ng-if="showRequests" style="background-color: red">{{friendRequestsNumber}}</span></a></li>
+                    <li><a href="#/guest/restaurants" ng-click="disconnect()">Restaurants</a></li>
+                    <li><a href="#/guest/reservations" ng-click="disconnect()">Reservations</a></li>
+                    <li><a href="#/" ng-click="logOut()">Log out</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="carousel-caption">
+            <h3>My restaurant history</h3>
+            <table class="responstable">
+                <thead>
+                <tr>
+                    <th>Restaurant</th>
+                    <th>Date</th>
+                    <th>Grades</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="his in histories">
+                    <td>{{his.waiter.restaurant.rName}}</td>
+                    <td>{{his.date | date}}</td>
+                    <td><button class="btn btn-primary" ng-click="openGradesModal(his)">Show</button></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
