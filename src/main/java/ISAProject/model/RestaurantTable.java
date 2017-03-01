@@ -25,10 +25,10 @@ public class RestaurantTable implements Serializable {
     @Version
     private int version;
 
-    @Column(name = "rtNumber", nullable = false)
+    @Column(name = "rtnumber", nullable = false)
     private int rtNumber;
 
-    @Column(name = "rtPosition", nullable = false)
+    @Column(name = "rtposition", nullable = false)
     private int rtPosition;
 
     @ManyToOne(fetch = FetchType.EAGER)
@@ -43,7 +43,7 @@ public class RestaurantTable implements Serializable {
     @JoinColumn(name = "trid", referencedColumnName = "trid")
     private TableRegion tableRegion;
 
-    @Column(name = "rtActive", nullable = false)
+    @Column(name = "rtactive", nullable = false)
     private Boolean rtActive;
 
     public Long getId() {

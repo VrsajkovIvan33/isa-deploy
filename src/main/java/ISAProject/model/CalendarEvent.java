@@ -31,25 +31,25 @@ public class CalendarEvent {
 //    @Column(name = "ceEnd")
 //    private Date end;
 
-    @Column(name = "ceYear")
+    @Column(name = "ceyear")
     private int year;
 
-    @Column(name = "ceMonth")
+    @Column(name = "cemonth")
     private int month;
 
-    @Column(name = "ceDay")
+    @Column(name = "ceday")
     private int day;
 
-    @Column(name = "ceStartHour")
+    @Column(name = "cestarthour")
     private int startHour;
 
-    @Column(name = "ceStartMinute")
+    @Column(name = "cestartminute")
     private int startMinute;
 
-    @Column(name = "ceEndHour")
+    @Column(name = "ceendhour")
     private int endHour;
 
-    @Column(name = "ceEndMinute")
+    @Column(name = "ceendminute")
     private int endMinute;
 
     @ManyToOne(fetch = FetchType.LAZY)

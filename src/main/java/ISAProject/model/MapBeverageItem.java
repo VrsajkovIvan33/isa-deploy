@@ -23,7 +23,7 @@ public class MapBeverageItem implements Serializable {
     private int version;
 
 
-    @Column(name = "mbiPrice", nullable = false)
+    @Column(name = "mbiprice", nullable = false)
     private float mbiPrice;
 
     @Column(name = "mbidescription", nullable = false)

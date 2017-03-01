@@ -34,7 +34,7 @@ public class VisitHistory {
     private int version;
 
     @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "orderItemsInHistory", joinColumns = @JoinColumn(name = "vhid", referencedColumnName = "vhid"), inverseJoinColumns = @JoinColumn(name = "oiid", referencedColumnName = "oiid"))
+    @JoinTable(name = "orderitemsinhistory", joinColumns = @JoinColumn(name = "vhid", referencedColumnName = "vhid"), inverseJoinColumns = @JoinColumn(name = "oiid", referencedColumnName = "oiid"))
     private List<OrderItem> orderItems;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -45,16 +45,16 @@ public class VisitHistory {
     @JoinColumn(name = "gid", referencedColumnName = "id")
     private Guest guest;
 
-    @Column(name = "vhRestaurantGrade")
+    @Column(name = "vhrestaurantgrade")
     private float restaurantGrade;
 
-    @Column(name = "vhServiceGrade")
+    @Column(name = "vhservicegrade")
     private float serviceGrade;
 
-    @Column(name = "vhMenuGrade")
+    @Column(name = "vhmenugrade")
     private float menuGrade;
 
-    @Column(name = "vhDate")
+    @Column(name = "vhdate")
     private Date date;
 
     public Long getId() {

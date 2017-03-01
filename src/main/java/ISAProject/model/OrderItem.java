@@ -51,17 +51,17 @@ public class OrderItem {
     private User staff;
 
     //"Waiting for waiter", "Waiting", "Currently making", "Ready"
-    @Column(name = "oiStatus", nullable = false)
+    @Column(name = "oistatus", nullable = false)
     private String oiStatus;
 
     //da li treba da bude pripremljeno pre nego sto stigne gost
-    @Column(name = "oiReadybyarrival", nullable = false)
+    @Column(name = "oireadybyarrival", nullable = false)
     private Boolean oiReadyByArrival;
 
-    @Column(name = "oiHour")
+    @Column(name = "oihour")
     private int hourOfArrival;
 
-    @Column(name = "oiMinute")
+    @Column(name = "oiminute")
     private int minuteOfArrival;
 
     @ManyToMany(mappedBy = "orderItems")

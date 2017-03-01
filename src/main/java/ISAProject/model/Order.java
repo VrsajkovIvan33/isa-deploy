@@ -39,11 +39,11 @@ public class Order {
     private RestaurantTable restaurantTable;
 
     //"Waiting for waiter", "Waiting", "Currently making" (ne moze da se menja), "Ready" (moze da se napravi racun)
-    @Column(name = "oStatus", nullable = false)
+    @Column(name = "ostatus", nullable = false)
     private String oStatus;
 
     //slobodna porudzbina ili je dodeljena nekom konobaru
-    @Column(name = "oAssigned", nullable =  false)
+    @Column(name = "oassigned", nullable =  false)
     private Boolean oAssigned;
 
     // jer je moguce da se zavrsi smena i drugi krene da ih opsluzuje
@@ -55,22 +55,22 @@ public class Order {
     @JoinColumn(name = "wid", referencedColumnName = "id")
     private Waiter currentWaiter;
 
-    @Column(name = "oYear")
+    @Column(name = "oyear")
     private int year;
 
-    @Column(name = "oMonth")
+    @Column(name = "omonth")
     private int month;
 
-    @Column(name = "oDay")
+    @Column(name = "oday")
     private int day;
 
-    @Column(name = "oHour")
+    @Column(name = "ohour")
     private int hourOfArrival;
 
-    @Column(name = "oMinute")
+    @Column(name = "ominute")
     private int minuteOfArrival;
 
-    @Column(name = "oBillCreated")
+    @Column(name = "obillcreated")
     private Boolean billCreated;
 
     public Long getId() {

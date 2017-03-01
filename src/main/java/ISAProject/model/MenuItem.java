@@ -23,7 +23,7 @@ public class MenuItem implements Serializable {
     private int version;
 
 
-    @Column(name = "miPrice", nullable = false)
+    @Column(name = "miprice", nullable = false)
     private float miPrice;
 
     @Column(name = "midescription", nullable = false)

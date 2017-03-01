@@ -25,10 +25,10 @@ public class RestaurantSegment implements Serializable {
     @Version
     private int version;
 
-    @Column(name = "rsName", nullable = false)
+    @Column(name = "rsname", nullable = false)
     private String rsName;
 
-    @Column(name = "rsColor", nullable = false)
+    @Column(name = "rscolor", nullable = false)
     private String rsColor;
 
     public Long getRsId() {

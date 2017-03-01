@@ -25,10 +25,10 @@ public class TableRegion implements Serializable {
     @Version
     private int version;
 
-    @Column(name = "trMark", nullable = false)
+    @Column(name = "trmark", nullable = false)
     private int trMark;
 
-    @Column(name = "trColor", nullable = false)
+    @Column(name = "trcolor", nullable = false)
     private String trColor;
 
     public Long getId() {

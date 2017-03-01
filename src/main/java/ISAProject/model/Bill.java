@@ -27,10 +27,10 @@ public class Bill implements Serializable {
     @Version
     private int version;
 
-    @Column(name = "blDate")
+    @Column(name = "bldate")
     private Date date;
 
-    @Column(name = "blTotal")
+    @Column(name = "bltotal")
     private float total;
 
     @ManyToOne(fetch = FetchType.LAZY)
