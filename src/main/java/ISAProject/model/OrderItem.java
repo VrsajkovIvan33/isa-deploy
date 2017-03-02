@@ -33,11 +33,11 @@ public class OrderItem {
 
     //gost koji je narucio
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "uid", referencedColumnName = "id")
+    @JoinColumn(name = "userid", referencedColumnName = "id")
     private User user;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "mid", referencedColumnName = "mid")
+    @JoinColumn(name = "menuid", referencedColumnName = "menuid")
     private Menu menu;
 
     @ManyToOne(fetch = FetchType.LAZY)

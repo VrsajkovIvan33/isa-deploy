@@ -52,7 +52,7 @@ public class MenuReview implements Serializable {
     private Date mrDate;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "uid", referencedColumnName = "id")
+    @JoinColumn(name = "userid", referencedColumnName = "id")
     private User mrUser;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -60,7 +60,7 @@ public class MenuReview implements Serializable {
     private Restaurant mrRestaurant;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "mid", referencedColumnName = "mid")
+    @JoinColumn(name = "menuid", referencedColumnName = "menuid")
     private Menu mrMenu;
 
     public Long getMrId() {

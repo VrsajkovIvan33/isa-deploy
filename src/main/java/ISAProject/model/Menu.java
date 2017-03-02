@@ -41,7 +41,7 @@ public class Menu implements Serializable {
 
     @Id
     @GeneratedValue
-    @Column(name = "mid")
+    @Column(name = "menuid")
     private Long mId;
 
     @Column(name = "mname", nullable = false)
